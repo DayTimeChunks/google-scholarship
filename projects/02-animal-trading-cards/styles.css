@@ -1,0 +1,34 @@
+/* Main Section */
+body{
+  font-family: "Open Sans", sans-serif;
+}
+
+.fact{
+  font-style: italic;
+}
+
+.items{
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.items > li > span{
+  font-weight: bold;
+}
+
+.box{
+  border: 1px solid grey;
+  padding: 20px;
+}
+
+.pic{
+  width: 300px;
+  padding-bottom: 20px;
+}
+
+.shadow{
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(204,204,204,1);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(204,204,204,1);
+  box-shadow: 10px 10px 5px 0px rgba(204,204,204,1);
+}

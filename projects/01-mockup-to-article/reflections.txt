@@ -1,0 +1,22 @@
+You've learned a lot about web development so far. I want you to take a moment to write down your thoughts about web development here. Answer the following questions:
+
+  * What new skills have you learned?
+
+Adequate use of elements. Although I knew about these I wasn’t using them properly before nor what each element stood for.  Now I am using them better and it is helping avoid too many line breaks ‘<br>’ everywhere!!  
+
+Also, learned about the target="_blank" on links used to open links in a new tab, which is nice if you want to keep reading the article after finishing the link. 
+
+Finally, with a good basis on CSS I have begun exploring bootstrap. I must say I am a fan of standard libraries, but not sure what is the consensus on using it. I started working on a second project and using bootstrap has made me move super quick through the development. :D Your thoughts on the use of bootstrap?
+
+  * What has been easy / difficult?
+
+I agree with @Joey_A , nothing has been easy or hard, just more challenging at some points. 
+
+  * How have you used the problem solving strategies from the first project to overcome challenges so far?
+
+The MDN web docs have become handy and this forum has been awesome to solve problems! :) 
+
+
+---
+
+Your response goes here!
