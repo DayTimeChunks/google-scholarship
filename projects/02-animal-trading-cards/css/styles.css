@@ -1,0 +1,92 @@
+
+
+/* High-level elements from bootstrap-4 */
+html{
+  font-family: sans-serif;
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+body {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #292b2c;
+  background-color: #fff;
+}
+
+/* h1, h2, h3, h4, h5, h6 { */
+h3 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+}
+
+/* h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 { */
+h3, .h3 {
+  margin-bottom: 0.5rem;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+h3, .h3 {
+  font-size: 1.75rem;
+}
+img {
+  border-style: none;
+}
+
+/* Main Section */
+.fact{
+  font-style: italic;
+}
+
+.items{
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.items > li > span{
+  font-weight: bold;
+}
+
+.box{
+  border: 1px solid grey;
+  border-radius: 25px;
+  padding: 20px;
+}
+
+.pic{
+  width: 960px;
+  height:1280px;
+  padding-bottom: 20px;
+}
+
+.m-font-weight-light{
+  font-weight: lighter;
+}
+/* Adapted from bootstrap */
+.m-img-thumbnail-round {
+  padding: 0.25rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 1.25rem;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  max-width: 100%;
+  height: auto;
+}
+
+.shadow{
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(204,204,204,1);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(204,204,204,1);
+  box-shadow: 10px 10px 5px 0px rgba(204,204,204,1);
+}
