@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Portfolio Mock - Pablo</title>
+    <link href="css/styles.css" rel="stylesheet">
+  	<link href="css/m-bs4.css" rel="stylesheet">
+  	<!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+    <script src="js/picturefill.min.js"></script>
+  	<link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Open+Sans" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <div class="container my-3">
+        <div class="row border-line mx-0">
+          <!--  flex direction options are a) flex-column or b) flex-row (default)-->
+          <div class="col-xs-3 col-md-3 d-flex justify-content-center my-4">
+            <!-- align-self-baseline -->
+            <!-- align-self-end -->
+            <img class="img-fluid align-self-center logo" src="images/azLogo.jpg" alt="AZ web and mobile logo">
+          </div>
+          <div class="col-md-3">
+
+          </div>
+          <!-- Question: Why the aling-bottom wont stick here? -->
+          <div class="col-md-6 text-right">
+              <h1 class="uppercase font-weight-light">Pablo Alvarez</h1>
+              <h5 class="uppercase font-weight-light">Front-End Ninja</h5>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <picture >
+              <source
+              media="(min-width: 992px)"
+              srcset="images/olliPortugal_1140w.jpg 1x">
+              <source
+              media="(min-width: 768px)"
+              srcset="images/olliPortugal_690w.jpg 1x">
+              <img class="img-fluid" src="images/olliPortugal_540w.jpg" alt="Portugal Algarve with Handmade wooden Surfboard">
+              <!-- <img class="project-img" src="images/635x250.svg" alt=""> -->
+            </picture>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container d-flex justify-content-center justify-content-md-start">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="mt-4 font-weight-light featured">Featured Work</h2>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-4">
+            <!-- src="http://i2.wp.com/blog.udacity.com/wp-content/uploads/2016/03/56df2490a351d802222160.gif" -->
+            <figure class="project-margin">
+              <img class="project-img"
+                src="images/placeholder.png" alt="Go board GIF">
+              <figcaption class="m-text-center">
+                <h3 class="uppercase font-weight-light mt-3">Article Mock</h3>
+                <small> <a class="featured" href="https://codepen.io/DayTimeChunks/pen/mXPRaJ" target="_blank">Codepen Mock Link</a>
+                </small>
+              </figcaption>
+            </figure>
+          </div>
+          <!-- src="images/AnimalTrading_300w.jpg"> -->
+          <div class="col-md-4 ">
+            <figure class="project-margin">
+              <img class="project-img"
+              src="images/placeholder.png" alt="Trading Card Photo">
+              <figcaption class="m-text-center">
+                <h3 class="uppercase font-weight-light mt-3">Animal Trading Card</h3>
+                <small> <a class="featured" href="https://github.com/DayTimeChunks/google-scholarship/tree/master/projects/02-animal-trading-cards" target="_blank">Github Card Link</a> </small>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="col-md-4">
+            <!-- src="images/pixel_art_small.jpg" -->
+            <figure class="project-margin">
+              <img class="project-img"
+              src="images/placeholder.png" alt="Pixel art maker project">
+              <figcaption class="m-text-center">
+                <h3 class="uppercase font-weight-light mt-3">Pixel Art Maker</h3>
+                <small> <a class="featured" href="https://codepen.io/DayTimeChunks/pen/eejXNx" target="_blank"> Codepen Pixel Art Link</a> </small>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </body>
+</html>

@@ -1,0 +1,45 @@
+
+
+.border-line {
+  border-bottom: 3px solid #7d97ad;
+}
+
+.logo {
+  width: 40%;
+}
+
+.uppercase {
+    text-transform: uppercase;
+    color: #2d3c49;
+}
+
+.featured {
+  color: #7d97ad;
+}
+
+.project-margin {
+  margin: 0.5rem 0rem;
+}
+
+.project-img {
+  /* width: calc((100% - 10px)/3); */
+  width: 60%;
+  max-height: auto;
+}
+
+@media (min-width: 768px) {
+  .logo {
+    width: 100%;
+  }
+  .project-img {
+    /* width: calc((100% - 10px)/3); */
+    width: 100%;
+    max-height: auto;
+  }
+
+}
+@media (min-width: 992px) {
+  .logo {
+    width: 70%;
+  }
+}
