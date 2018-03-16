@@ -1,3 +1,4 @@
+/* This file includes classes from Twitter Boostrap v4 */
 
 /* My Keeper Bootstrap Classes */
 /* High-level elements from bootstrap-4 */
@@ -42,6 +43,8 @@ body {
   background-color: #fff;
 }
 
+/* I left long elements/classes like these inline
+  on purpose for brevity! */
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: .5rem;
@@ -84,19 +87,6 @@ img {
   border-style: none;
 }
 
-/* hr {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
-  height: 0;
-  overflow: visible;
-}
-
-hr {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  border: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-} */
 /* END of High-level elements from bootstrap-4 */
 
 .font-weight-light {
@@ -154,7 +144,6 @@ hr {
   }
 }
 
-
 @media (min-width: 768px) {
   .container {
     padding-right: 15px;
@@ -204,42 +193,6 @@ hr {
   }
 }
 
-/* .container-fluid {
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
-@media (min-width: 576px) {
-  .container-fluid {
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-}
-
-@media (min-width: 768px) {
-  .container-fluid {
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-}
-
-@media (min-width: 992px) {
-  .container-fluid {
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container-fluid {
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-} */
-
 .row {
   display: -webkit-box;
   display: -webkit-flex;
@@ -280,7 +233,10 @@ hr {
   }
 }
 
-.col-md-3, .col-md-4, .col-md-6, .col-md-12, .col-lg-3, .col-lg-6, .col-lg-12, .col-12 {
+.col-md-3, .col-md-4, .col-md-6,
+.col-md-12,
+.col-lg-3, .col-lg-6, .col-lg-12,
+.col-12 {
   position: relative;
   width: 100%;
   min-height: 1px;
@@ -289,28 +245,36 @@ hr {
 }
 
 @media (min-width: 576px) {
-  .col-md-3, .col-md-4, .col-md-6, .col-md-12, .col-lg-3, .col-lg-6, .col-lg-12, .col-12 {
+  .col-md-3, .col-md-4, .col-md-6, .col-md-12,
+  .col-lg-3, .col-lg-6, .col-lg-12,
+  .col-12 {
     padding-right: 15px;
     padding-left: 15px;
   }
 }
 
 @media (min-width: 768px) {
-  .col-md-3, .col-md-4, .col-md-6, .col-md-12, .col-lg-3, .col-lg-6, .col-lg-12, .col-12 {
+  .col-md-3, .col-md-4, .col-md-6, .col-md-12,
+  .col-lg-3, .col-lg-6, .col-lg-12,
+  .col-12 {
     padding-right: 15px;
     padding-left: 15px;
   }
 }
 
 @media (min-width: 992px) {
-  .col-md-3, .col-md-4, .col-md-6, .col-md-12, .col-lg-3, .col-lg-6, .col-lg-12, .col-12 {
+  .col-md-3, .col-md-4, .col-md-6, .col-md-12,
+  .col-lg-3, .col-lg-6, .col-lg-12,
+  .col-12 {
     padding-right: 15px;
     padding-left: 15px;
   }
 }
 
 @media (min-width: 1200px) {
-  .col-md-3, .col-md-4, .col-md-6, .col-md-12, .col-lg-3, .col-lg-6, .col-lg-12, .col-12 {
+  .col-md-3, .col-md-4, .col-md-6, .col-md-12,
+  .col-lg-3, .col-lg-6, .col-lg-12,
+  .col-12 {
     padding-right: 15px;
     padding-left: 15px;
   }
@@ -357,7 +321,6 @@ hr {
   }
 }
 
-
 @media (min-width: 992px) {
   .col-lg-3 {
     -webkit-box-flex: 0;
@@ -400,7 +363,6 @@ hr {
 
 
 /* Margins in boostrap have the "!important" tag */
-
 .mx-0 {
   margin-right: 0;
   margin-left: 0;
