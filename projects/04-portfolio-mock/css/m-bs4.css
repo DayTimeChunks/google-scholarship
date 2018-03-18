@@ -137,6 +137,45 @@ img {
   align-self: center !important;
 }
 
+
+.row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.col-6, .col-12,
+.col-md-3, .col-md-4, .col-md-6,
+.col-md-12,
+.col-lg-3, .col-lg-6, .col-lg-12 {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.col-6 {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.col-12 {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+
 @media (min-width: 576px) {
   .container {
     padding-right: 15px;
@@ -193,17 +232,6 @@ img {
   }
 }
 
-.row {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
-}
 
 @media (min-width: 576px) {
   .row {
@@ -230,58 +258,18 @@ img {
   .row {
     margin-right: -15px;
     margin-left: -15px;
-  }
-}
-
-.col-md-3, .col-md-4, .col-md-6,
-.col-md-12,
-.col-lg-3, .col-lg-6, .col-lg-12,
-.col-12 {
-  position: relative;
-  width: 100%;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
-@media (min-width: 576px) {
-  .col-md-3, .col-md-4, .col-md-6, .col-md-12,
-  .col-lg-3, .col-lg-6, .col-lg-12,
-  .col-12 {
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-}
-
-@media (min-width: 768px) {
-  .col-md-3, .col-md-4, .col-md-6, .col-md-12,
-  .col-lg-3, .col-lg-6, .col-lg-12,
-  .col-12 {
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-}
-
-@media (min-width: 992px) {
-  .col-md-3, .col-md-4, .col-md-6, .col-md-12,
-  .col-lg-3, .col-lg-6, .col-lg-12,
-  .col-12 {
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .col-md-3, .col-md-4, .col-md-6, .col-md-12,
-  .col-lg-3, .col-lg-6, .col-lg-12,
-  .col-12 {
-    padding-right: 15px;
-    padding-left: 15px;
   }
 }
 
 @media (min-width: 576px) {
   /* only for sm sizes */
+  .col-sm-6 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
 }
 
 /* Half of your Mac's width */
@@ -350,14 +338,6 @@ img {
   .col-12 {
     padding-right: 15px;
     padding-left: 15px;
-  }
-
-  .col-12 {
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 100%;
-        -ms-flex: 0 0 100%;
-            flex: 0 0 100%;
-    max-width: 100%;
   }
 }
 
