@@ -3,35 +3,46 @@
 <head>
     <title>Pixel Art Maker!</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
     <link rel="stylesheet" href="styles.css">
-    <script
+    <!-- <script
       src="https://code.jquery.com/jquery-3.2.1.min.js"
       integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
       crossorigin="anonymous"></script>
-    <script src="designs.js"></script>
+    <script src="designs.js"></script> -->
 </head>
 <body>
-    <h1>Lab: Pixel Art Maker</h1>
 
-    <h2>Choose Grid Size</h2>
-    <form id="sizePicker">
-        Grid Height:
-        <input type="number" id="input_height" name="height" min="1" value="1">
-        Grid Width:
-        <input type="number" id="input_width" name="width" min="1" value="1">
-        <input type="submit" required>
-    </form>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3"></div>
+      <div class="col col-lg-6">
+        <h1>Lab: Pixel Art Maker</h1>
 
-    <h2>Pick A Color</h2>
-    <input type="color" id="colorPicker">
+        <h2>Choose Grid Size</h2>
+        <form id="sizePicker">
+            Grid Height:
+            <input type="number" id="input_height" name="height" min="1" value="1">
+            Grid Width:
+            <input type="number" id="input_width" name="width" min="1" value="1">
+            <input type="submit" required>
+        </form>
 
-    <h2>Design Canvas</h2>
-    <table id="pixel_canvas">
-      <!-- tr: table row -->
-      <!-- td: table cell -->
+        <h2>Pick A Color</h2>
+        <input type="color" id="colorPicker">
+
+        <h2>Design Canvas</h2>
+        <table id="pixel_canvas">
+          <!-- tr: table row -->
+          <!-- td: table cell -->
+
+      </div>
+    </div>
+  </div>
+
 
 
     </table>
-
+    <script src="design-pure.js"></script>
 </body>
 </html>
