@@ -6,9 +6,9 @@
 2. You have unlimited number of moves. However, the more moves you take, the less final stars you will have, and the lower your score.
 Your final score will be:  
 
-  *Final Score = Pairs Matched* • 2 • *Number of Stars*
-  
-3. You will also be timed, but this does not affect your score! The timer starts inly after you open the first card.
+    *Final Score = Pairs Matched* • 2 • *Number of Stars*
+
+3. You will also be timed, but this does not affect your score! The timer starts only after you open the first card!
 
 ## About
 
