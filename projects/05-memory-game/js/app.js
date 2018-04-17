@@ -8,6 +8,7 @@ let icons = ["fa-diamond", "fa-paper-plane-o", "fa-anchor", "fa-bolt",
   ];
 
 // Global tracking variables
+let firstCard;
 let score;
 let moves;
 let matchedCards;
@@ -22,6 +23,13 @@ let delay = (function() {
 })();
 const moveElement = document.getElementById('moves');
 const starElement = document.getElementById('stars');
+
+var minutesLabel = document.getElementById("minutes");
+var secondsLabel = document.getElementById("seconds");
+var start;
+var totalSeconds;
+var modalMin = document.getElementById("totmin");
+var modalSec = document.getElementById("totsec");
 
 /*
  * Display the cards on the page
@@ -73,6 +81,10 @@ function shuffle(array) {
 // Event delegation
 // Use ".target" (bubbling up) to conect to each card
 deck.addEventListener('click', function flipCard(e) {
+	if (firstCard == true) {
+		firstCard = false;
+		startTimer();
+	}
 	if (e.target.nodeName === 'LI' && pairs.length < 2) {
 		cardChoice = e.target;
 		let cardClass = e.target.querySelector('i').className;
@@ -129,12 +141,7 @@ function incrementMove() {
 }
 
 
-var minutesLabel = document.getElementById("minutes");
-var secondsLabel = document.getElementById("seconds");
-var start;
-var totalSeconds;
-var modalMin = document.getElementById("totmin");
-var modalSec = document.getElementById("totsec");
+
 
 function resetGame() {
 	endTimer();
@@ -151,13 +158,15 @@ function resetGame() {
 	score = 0;
 	matchedCards = 0;
 	pairs = [];
-	startTimer();
-
+	firstCard = true;
+	totalSeconds = 0;
+	console.log(secondsLabel);
+	secondsLabel.innerHTML = digitalClock(totalSeconds % 60);
+	minutesLabel.innerHTML = digitalClock(parseInt(totalSeconds / 60));
 }
 
 function startTimer() {
 	// Timer, adapted from https://stackoverflow.com/a/5517836/5118344
-	totalSeconds = 0;
 	start = setInterval(setTime, 1000); // Call function every 1s
 
 	function setTime() {
@@ -165,6 +174,7 @@ function startTimer() {
 		secondsLabel.innerHTML = digitalClock(totalSeconds % 60);
 		minutesLabel.innerHTML = digitalClock(parseInt(totalSeconds / 60));
 	}
+
 }
 
 function digitalClock(val) {
@@ -184,7 +194,7 @@ function checkWin() {
 	console.log(matchedCards);
 	if (matchedCards === 8) {
 		// Display win message with the final score
-		const finalScore = (matchedCards * 2 *
+		let finalScore = (matchedCards * 2 *
 			starElement.getElementsByTagName('li').length);
 
 		let score = document.getElementById("score");
