@@ -7,6 +7,7 @@
 Your final score will be:  
 
   *Final Score = Pairs Matched* • 2 • *Number of Stars*
+  
 3. You will also be timed, but this does not affect your score! The timer starts inly after you open the first card.
 
 ## About
