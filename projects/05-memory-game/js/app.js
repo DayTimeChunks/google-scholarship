@@ -198,7 +198,9 @@ function checkWin() {
 			starElement.getElementsByTagName('li').length);
 
 		let score = document.getElementById("score");
+		let starsleft = document.getElementById('starsleft');
 		score.textContent = finalScore.toString();
+		starsleft.textContent = starElement.getElementsByTagName('li').length.toString();
 
 		modalSec.innerHTML = digitalClock(totalSeconds % 60);
 		modalMin.innerHTML = digitalClock(parseInt(totalSeconds / 60));
@@ -218,19 +220,18 @@ function checkWin() {
 		// When the user clicks on <span> (x), close the modal
 		close.onclick = function() {
 			modal.style.display = "none";
-		}
+		};
 		playBtn.onclick = function() {
 			modal.style.display = "none";
 			startGame();
-
-		}
+		};
 
 		// When the user clicks anywhere outside of the modal, close it
 		window.onclick = function(event) {
 			if (event.target == modal) {
 				modal.style.display = "none";
 			}
-		}
+		};
 
 	}
 }
