@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ottawa Times</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="responsive.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script type="text/javascript" src="menu.js"></script>
+
+    </script>
+  </head>
+  <body>
+
+    <header class="header">
+      <div class="header__inner">
+        <img class="header__logo" src="images/city.png" alt="iconic view of a cityscape">
+        <h1 id="header" class="header__title">
+          The Ottawa Times
+        </h1>
+        <a id="menu" class="header__menu"><i class="fas fa-bars fa-3x"></i>
+        </a>
+
+      </div>
+    </header>
+
+    <nav id="drawer" class="nav">
+      <ul class="nav__list">
+        <li class="nav__item"><a href="#">News</a></li>
+        <li class="nav__item"><a href="#">Events</a></li>
+        <li class="nav__item"><a href="#">Culture</a></li>
+        <li class="nav__item"><a href="#">Blog</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="content">
+        <section class="hero">
+          <article class="description">
+            <h2>Absolutely funny breaking news!</h2>
+            <p>This page is a customization of the Front-end developer Nanodegree were I learnt to set up a site to be responsive to different screen sizes. To personalize it I included some hilarious whatsapp messages I received from sisters in the last month.</p>
+          </article>
+        </section>
+
+        <section class="news top-news">
+          <h2 class="news__title">Top news <a href="#" class="news__more">+ more</a></h2>
+          <ul>
+            <li class="top-news__item">
+              <a href="#">So. I'm part of the space club right?</a>
+            </li>
+            <li class="top-news__item">
+              <a href="#">Switching over to the dark side.</a>
+            </li>
+            <li class="top-news__item">
+              <a href="#">I hate mecanics!</a>
+            </li>
+            <li class="top-news__item">
+              <a href="#">Guys I just Skyped with Bristol! I got the math PhD position!!! :D </a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="scores">
+          <table class="scores__table">
+            <thead>
+              <tr>
+                <th>date</th>
+                <th class="scores__location">location</th>
+                <th>team</th>
+                <th colspan="2">score</th>
+                <th>team</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Friday</td>
+                <td class="scores__location">New York</td>
+                <td>Islanders</td>
+                <td>3</td>
+                <td class="winner">6</td>
+                <td class="winner">Canadiens</td>
+              </tr>
+              <tr>
+                <td>Friday</td>
+                <td class="scores__location">Ottawa</td>
+                <td class="winner">Senators</td>
+                <td class="winner">5</td>
+                <td>4</td>
+                <td>Golden Knights</td>
+              </tr>
+              <tr>
+                <td>Saturday</td>
+                <td class="scores__location">Vancouver</td>
+                <td class="winner">Predators</td>
+                <td class="winner">4</td>
+                <td>3</td>
+                <td>Canucks</td>
+              </tr>
+              <tr>
+                <td>Sunday</td>
+                <td class="scores__location">Calgary</td>
+                <td>Flames</td>
+                <td>1</td>
+                <td class="winner">3</td>
+                <td class="winner">Rangers</td>
+              </tr>
+              <tr>
+                <td>Sunday</td>
+                <td class="scores__location">Boston</td>
+                <td class="winner">Bruins</td>
+                <td class="winner">2</td>
+                <td>1</td>
+                <td>Canadiens</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </section>
+
+        <section class="weather">
+          <span class="weather__location">Ottawa, Canada</span>
+          <span class="weather__desc">Sunny</span>
+          <span class="weather__today">
+          <img class="weather__today__image" src="images/weather.png" alt="icon of a partially sunny day"><span class="weather__today__temp">13</span><span class="weather__today__deg">&deg;C</span>
+          </span>
+          <ul class="weather__next">
+            <li class="weather__next__item">
+              <span>Mon</span>
+              <img class="weather__next__image" src="images/sunny.png" alt="icon of a sunny day">
+              <span>13 &deg;C</span>
+            </li><li class="weather__next__item">
+              <span>Tues</span>
+              <img class="weather__next__image" src="images/cloudy.png" alt="icon of a cloudy day">
+              <span>13 &deg;C</span>
+            </li><li class="weather__next__item">
+              <span>Wed</span>
+              <img class="weather__next__image" src="images/cloudy.png" alt="icon of a cloudy day">
+              <span>13 &deg;C</span>
+            </li><li class="weather__next__item">
+              <span>Thu</span>
+              <img class="weather__next__image" src="images/rain.png" alt="icon of a rainy day">
+              <span>13 &deg;C</span>
+            </li><li class="weather__next__item">
+              <span>Fri</span>
+              <img class="weather__next__image" src="images/sunny.png" alt="icon of a sunny day">
+              <span>13 &deg;C</span>
+            </li>
+          </ul>
+        </section>
+
+        <section class="news recent-news">
+          <h2 class="news__title">Latest news <a href="#" class="news__more">+ more</a></h2>
+          <ul>
+            <li class="snippet">
+              <img class="snippet__thumbnail" src="images/dog.GIF" sizes="(min-width: 992px) 50vw, 100vw"
+              alt="Picture of a dog flying confused in the international space station">
+              <h3 class="snippet__title"><a href="#">So. I'm part of the space club right?</a></h3>
+              <p>Sofia: So. I'm part of the space club right? We're building a satelite, and they put me in the ADCS team (attitude détermination and control system) when I joined. Sooooo it turns out my team leader went mia, cause he's a 2nd year in physics engineering and it's even harder than electrical (it's brutal). So he's out. And it means our team is down to two people, me and this other girl.
+              </p>
+              <p>Sofia: I just assumed she would take charge cause she's got seniority et al, but when they asked her when she could make it to the team lead meeting, she said "I'll talk to Sofia". ..... So..... I guess I'm gonna be team lead....? Of this thing I have no clue how to pilot....</p>
+            </li>
+            <li class="snippet">
+              <img class="snippet__thumbnail comic" src="images/raccoon.jpeg" alt="picture of a raccoon that wants to be challenged... a little maybe">
+              <h3 class="snippet__title"><a href="#">Switching over to the dark side.</a></h3>
+              <p>Sofia: Pabs! How good are you with regex and bash scripting? </p>
+              <p>Pablo: Not a super hero... but what do you need to do?</p>
+              <p>...a few hrs later</p>
+              <p>Sofia: Booom! I just made my first bash script 😁😁😁  Its to compile and run c++ files, for school, but I totally did not need to spent a whole day figuring out how to run it in Atom. That is, getting a terminal to run within atom, etc, etc... But it works bitcheeeesss!!</p>
+            </li>
+            <li class="snippet">
+              <img class="snippet__thumbnail" src="images/frust.gif" alt="picture of a girl frustrated tossing her documents in the air">
+              <h3 class="snippet__title"><a href="#">I hate mecanics!</a></h3>
+              <p>Sofia: Guys! I hate mecanics. I just can't be bothered. It's soooo booooooring!! How am I going to be an engineer if I can't even do basic physics problems?
+              </p>
+              <p>Tania: Try reading Adorno — it sucks $§%*ss. Do it more, it's practice.</p>
+            </li>
+
+          </ul>
+        </section>
+      </section>
+      <footer>
+        <ul>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">Follow us on Twitter</a></li>
+          <li><a href="#">RSS</a></li>
+          <li> <a href="http://upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Mexico.svg" target="_blank">Cool SVG Mexican Flag</a>
+          </li>
+        </ul>
+      </footer>
+    </main>
+    <!-- <script type="text/javascript" src="menu.js"></script> -->
+  </body>
+
+</html>

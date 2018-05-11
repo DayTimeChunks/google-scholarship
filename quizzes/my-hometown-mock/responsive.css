@@ -1,0 +1,166 @@
+
+/* In the course they define
+queries for smaller sizes, but if we
+are building for mobile first the defaults hould be small screens,
+quering only for larger ones, so I will attempt that.
+ */
+/*
+ *
+ * Top Level Navigation
+ *
+ */
+
+.header__logo {
+    height: 48px;
+    margin-right: 0.5em;
+    margin-top: 12px;
+    vertical-align: top;
+
+  }
+
+.header__title {
+  margin-left: 0;
+  font-weight: 300;
+  font-size: 2em;
+  vertical-align: bottom;
+  display: inline-block;
+  color: #212121;
+  margin: 0.5em 0.25em;
+}
+
+.header__menu {
+  /* margin: 0.5em; */
+  padding: 1em;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+}
+
+
+.nav {
+  z-index: 10;
+  /* Places nav in-front of everythin */
+  width: 300px;
+  position: absolute;
+  /* This trasform moves the drawer off canvas. */
+  -webkit-transform: translate(-300px, 0);
+  transform: translate(-300px, 0);
+  /* Optionally, we animate the drawer. */
+  transition: transform 0.3s ease;
+}
+
+.nav.open {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+    background-color: #fff;
+}
+
+.nav__item {
+  display: list-item;
+  border-bottom: 1px solid #E0E0E0;
+  width: 100%;
+  text-align: left;
+  text-align: center;
+  box-sizing: border-box;
+  line-height: 24px;
+  padding: 24px;
+  text-transform: uppercase;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #616161;
+  padding: 1.5em;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+  color: #212121;
+}
+
+@media screen and (min-width: 576px) {
+  /* #drawer {
+    display: block;
+  } */
+
+  .header__menu {
+    display: none;
+  }
+  .header__logo {
+    height: 72px;
+    margin-right: 1em;
+
+  }
+  .header__title {
+    font-size: 4em;
+  }
+
+  /*
+   *
+   * Top Level Navigation
+   *
+   */
+  .nav {
+    position: relative;
+    order : 0;
+    width: 100%;
+    z-index: auto;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+
+
+  }
+
+  .nav__list {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .nav__item {
+    display: inline-block;
+    width: 24%;
+  }
+
+
+
+  /* Main content */
+  .hero {
+    order: 1;
+    width: 60%;
+  }
+  .weather {
+    order: 2;
+    width: 40%;
+  }
+
+}
+
+/* Lesson 14, Quiz 11 */
+@media screen and (min-width: 768px) {
+  .hero, .top-news, .scores, .weather {
+    width: 50%;
+  }
+  .snippet__thumbnail {
+    width: 50vw;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  .snippet__thumbnail {
+    width: 30vw;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .header__inner, .nav__list, .content, footer>ul {
+    width: 992px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .snippet__thumbnail {
+    width: 20vw;
+  }
+
+}
