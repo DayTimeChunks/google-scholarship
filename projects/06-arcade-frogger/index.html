@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Effective JavaScript: Frogger</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container d-flex justify-content-center">
+      <div class="row">
+        <div class="">
+          <header>
+              <h1 class="text-center">Frogger Game</h1>
+              <h2 id="level" class="text-center"></h2>
+              <h3 id="score" class="text-center"></h2>
+          </header>
+
+          <section class="score-panel">
+          	<ul id="stars" class="stars px-3"> Lives
+          	</ul>
+
+            <div id="restart" class="restart px-3">
+      		    <i class="fa fa-repeat"></i>
+        	  </div>
+
+            <span class="timer">Timer:
+              <label id="minutes">00</label>:<label id="seconds">00</label>
+            </span>
+
+
+          </section>
+
+          <ul id="frame" class="deck">
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+
+      <div class="modal-content">
+        <span class="close"> &times;</span>
+        <div class="modal-parent">
+          <div class="modal-child">
+            <p>GAME OVER!</p>
+            <p>Your final score is:</p>
+            <strong><span id="modalScore"></span></strong>
+            <p>
+            <button class="btn" id="play" type="button" name="play">Play again!</button>
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    </div>
+
+    <script src="js/resources.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/engine.js"></script>
+</body>
+</html>
