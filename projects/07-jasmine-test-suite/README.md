@@ -21,7 +21,7 @@ Testing is an important part of the development process and many organisations p
 
 I learnt how to use Jasmine to write a number of tests against a pre-existing application, testing the underlying business logic of the application as well as the event handling and DOM manipulation.
 
-## How will completed this project?
+## How I completed this project?
 
 Reviewed the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/projects/3442558598/rubric)
 
