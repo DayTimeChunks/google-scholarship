@@ -103,34 +103,11 @@ $(function() {
 		});
 	});
 
-	describe('New feed selection', function() {
+	describe('New feed selection, with nested async callbacks', function() {
 		/* Ensure that when a new feed is loaded
 		 * by the loadFeed function that the content actually changes.
 		 */
 		let feed, newfeed;
-		beforeEach(function(done) {
-			loadFeed(feedIndex, function() {
-				feedIndex++;
-				done();
-			});
-		});
-
-		it('loads first selection', function(done) {
-			feed = $('.feed').html(); // first feed
-			expect(feed.length > 0).toBe(true);
-			done();
-		});
-
-		it('loads the second selection, which is different to the first', function(done) {
-			newfeed = $('.feed').html(); // new feed
-			expect(feed.length === newfeed.length).toBe(false);
-			done();
-		});
-	});
-
-	describe('New feed selection, with nested loop approach', function() {
-		/* Same test as above.
-		 */
 		feedIndex = 0;
 		beforeEach(function(done) {
 			loadFeed(feedIndex, function() {
@@ -143,7 +120,7 @@ $(function() {
 			});
 		});
 
-		it('loads the second selection, which is different to the first', function(done) {
+		it('loads the second selection, which is different from the first', function(done) {
 			expect(feed.length === newfeed.length).toBe(false);
 			done();
 		});
