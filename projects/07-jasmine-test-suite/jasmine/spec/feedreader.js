@@ -87,7 +87,6 @@ $(function() {
 
 		beforeEach(function(done) {
 			loadFeed(feedIndex, function() {
-				console.log(feedIndex);
 				done();
 			});
 		});
@@ -97,9 +96,8 @@ $(function() {
 		 * Remember, loadFeed() is asynchronous so this test will require
 		 * the use of Jasmine's beforeEach and asynchronous done() function.
 		 */
-		it('have at least one entry', function(done) {
-			expect($('.feed .entry').length > 0).toBe(true);
-			done();
+		it('have at least one entry', function() {
+			expect($('.feed .entry').length).toBeGreaterThan(true);
 		});
 	});
 
@@ -120,9 +118,8 @@ $(function() {
 			});
 		});
 
-		it('loads the second selection, which is different from the first', function(done) {
-			expect(feed.length === newfeed.length).toBe(false);
-			done();
+		it('loads the second selection, which is different from the first', function() {
+			expect(feed).not.toEqual(newfeed);
 		});
 	});
 }());
