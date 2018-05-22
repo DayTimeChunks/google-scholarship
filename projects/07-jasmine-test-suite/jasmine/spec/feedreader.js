@@ -97,7 +97,7 @@ $(function() {
 		 * the use of Jasmine's beforeEach and asynchronous done() function.
 		 */
 		it('have at least one entry', function() {
-			expect($('.feed .entry').length).toBeGreaterThan(true);
+			expect($('.feed .entry').length).toBeGreaterThan(0);
 		});
 	});
 
