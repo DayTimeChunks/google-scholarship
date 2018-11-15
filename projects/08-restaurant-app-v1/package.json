@@ -1,0 +1,25 @@
+{
+  "name": "mws-restaurant-stage-1",
+  "version": "1.0.0",
+  "description": "\"Web Dev Course 1st App\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "./node_modules/gulp/bin/gulp.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/udacity/mws-restaurant-stage-1.git"
+  },
+  "author": "PAZ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/udacity/mws-restaurant-stage-1/issues"
+  },
+  "homepage": "https://github.com/udacity/mws-restaurant-stage-1#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0"
+  }
+}
