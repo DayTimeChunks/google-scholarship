@@ -19,6 +19,7 @@ This repository stores all Projects and interesting Quizzes solved during the Go
   - [05-memory-game](#05-memory-game)
   - [06-arcade-frogger](#06-arcade-frogger)
   - [07-jasmine-test-suite](#07-jasmine-test-suite)
+  - [08-restaurant-app-v1](#08-restaurant-app-v1)
 2. Quizzes
 
 
@@ -51,3 +52,7 @@ Diving deeper into **JavaScript and CSS animations.** *Task:* Build a complete b
 ## 07-jasmine-test-suite
 
 **Wrting Test Suites with JavaScript.** *Task:* Given a web-based application that reads RSS feed, develop a Test Suite using [Jasmine](https://jasmine.github.io/), a "behaviour-driven development framework for testing JavaScript code."
+
+## 08-restaurant-app-v1
+
+**Responsiveness, Accessibility and Offline-first** Task: Convert a non-functional static web page into a mobile friendly responsive website, with accessibility in mind and employing a *Service Worker* to make it available offline. 
