@@ -158,7 +158,7 @@ class DBHelper {
    * Fills-in the cusine type as photo description.
    * */
   static altForImage(restaurant){
-    return (`${restaurant.cuisine_type}`);
+    return (`Photo of ${restaurant.name}`);
   }
 
   /**

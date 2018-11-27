@@ -22,12 +22,11 @@
     <!-- Beginning breadcrumb -->
     <div class="row">
       <div class="col-12 col-md-6">
-        <ul id="breadcrumb" >
-          <li><a href="/">Home</a></li>
+        <ul id="breadcrumb" role="navigation">
+          <li><a aria-label="Go back to home" href="/">Home</a></li>
         </ul>
       </div>
     </div>
-
 
     <!-- End breadcrumb -->
     <!-- End nav -->
@@ -42,7 +41,7 @@
       <!-- Beginning map -->
       <div class="row ">
         <section class="col-12 col-md-6" id="map-container">
-          <div id="mapid"></div>
+          <div id="mapid" role="application" aria-label="Restaurant location"></div>
         </section>
       <!--</div>-->
       <!-- End map -->
@@ -91,9 +90,6 @@
   <script type="text/javascript" src="js/dbhelper.js"></script>
   <!-- Main javascript file -->
   <script type="text/javascript" src="js/restaurant_info.js"></script>
-  <!-- Google Maps -->
- <!--  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_tKbW6A5pQ-eupxI56myUnHLqYCzOjKo&libraries=places&callback=initMap"></script> -->
-  <!-- End scripts -->
 
 </body>
 

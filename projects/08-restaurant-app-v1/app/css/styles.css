@@ -1,6 +1,8 @@
 @charset "utf-8";
 /* CSS Document */
 
+
+
 body,td,th,p{
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 10pt;
@@ -9,8 +11,10 @@ body,td,th,p{
 }
 body {
 	background-color: #fdfdfd;
-	margin: 0;
+	/*margin: 0px -30px 0px 0px;*/
+	margin: 0px;
 	position:relative;
+  width: 100vw;
 }
 ul, li {
 	font-family: Arial, Helvetica, sans-serif;
@@ -208,6 +212,10 @@ nav h1 a {
   z-index: 1000;
 }
 
+.inside-index {
+  /*right: 0;*/
+}
+
 .inside #map-container {
   /* Will place a small map at the bottom for small screens */
   padding-left: 0px;
@@ -237,10 +245,13 @@ nav h1 a {
 
 .inside #mapid {
   background-color: #ccc;
+  /*background-color: greenyellow;*/
   height: 100%;
   /*height: calc(100% - 130px);*/
   width: 100%;
 }
+
+
 .inside #footer {
   bottom: 0;
   position: absolute;

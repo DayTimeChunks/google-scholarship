@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
   <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/responsive.css">
@@ -15,7 +15,7 @@
   <title>Restaurant Reviews</title>
 </head>
 
-<body>
+<body class="inside-index">
   <header>
     <a href="#filters" class="skip-link">Skip to filters</a>
     <nav>
@@ -25,7 +25,7 @@
 
   <main id="maincontent">
     <section id="map-container">
-      <div id="mapid"></div>
+      <div id="mapid" role="application" aria-label="Filtered restaurant locations"></div>
     </section>
     <section id="filters">
 
