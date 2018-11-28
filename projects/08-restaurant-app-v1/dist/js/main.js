@@ -171,14 +171,17 @@ createRestaurantHTML = (restaurant) => {
 	li.append(image);
 
 	const name = document.createElement('h1');
+	name.tabIndex = 0;
 	name.innerHTML = restaurant.name;
 	li.append(name);
 
 	const neighborhood = document.createElement('p');
+	neighborhood.tabIndex = 0;
 	neighborhood.innerHTML = restaurant.neighborhood;
 	li.append(neighborhood);
 
 	const address = document.createElement('p');
+	address.tabIndex = 0;
 	address.innerHTML = restaurant.address;
 	li.append(address);
 

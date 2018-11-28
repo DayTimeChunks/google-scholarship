@@ -15,6 +15,7 @@ body {
 	margin: 0px;
 	position:relative;
   width: 100vw;
+  overflow-x:hidden;
 }
 ul, li {
 	font-family: Arial, Helvetica, sans-serif;
@@ -212,10 +213,6 @@ nav h1 a {
   z-index: 1000;
 }
 
-.inside-index {
-  /*right: 0;*/
-}
-
 .inside #map-container {
   /* Will place a small map at the bottom for small screens */
   padding-left: 0px;
@@ -228,21 +225,6 @@ nav h1 a {
   z-index: 1001;
 }
 
-@media (min-width: 768px){
-  .inside #map-container {
-    /* Will move the map to the right column */
-    /*background: blue none repeat scroll 0 0;*/
-    padding-left: 0px;
-    padding-right: 0px;
-    position: fixed;
-    /*height: 87%;*/
-    height: calc(100% - 80px);
-    right: 0;
-    top: 80px;
-    width: 100%;
-  }
-}
-
 .inside #mapid {
   background-color: #ccc;
   /*background-color: greenyellow;*/
@@ -250,7 +232,6 @@ nav h1 a {
   /*height: calc(100% - 130px);*/
   width: 100%;
 }
-
 
 .inside #footer {
   bottom: 0;
@@ -340,4 +321,21 @@ nav h1 a {
 .skip-link:focus {
   /* Makes the skip button visible when focused */
   top:0;
+}
+
+
+
+@media (min-width: 768px){
+  .inside #map-container {
+    /* Will move the map to the right column */
+    /*background: blue none repeat scroll 0 0;*/
+    padding-left: 0px;
+    padding-right: 0px;
+    position: fixed;
+    /*height: 87%;*/
+    height: calc(100% - 80px);
+    right: 0;
+    top: 80px;
+    width: 100%;
+  }
 }
