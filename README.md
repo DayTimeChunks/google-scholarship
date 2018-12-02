@@ -20,6 +20,8 @@ This repository stores all Projects and interesting Quizzes solved during the Go
   - [06-arcade-frogger](#06-arcade-frogger)
   - [07-jasmine-test-suite](#07-jasmine-test-suite)
   - [08-restaurant-app-v1](#08-restaurant-app-v1)
+  - [09-react-myreads](#09-react-myreads)
+
 2. Quizzes
 
 
@@ -55,4 +57,8 @@ Diving deeper into **JavaScript and CSS animations.** *Task:* Build a complete b
 
 ## 08-restaurant-app-v1
 
-**Responsiveness, Accessibility and Offline-first** Task: Convert a non-functional static web page into a mobile friendly responsive website, with accessibility in mind and employing a *Service Worker* to make it available offline. 
+**Responsiveness, Accessibility and Offline-first** Task: Convert a non-functional static web page into a mobile friendly responsive website, with accessibility in mind and employing a *Service Worker* to make it available offline.
+
+## 09-react-myreads
+
+**React basics** Task: Convert a static web page into an Application controlled by React JS. 
