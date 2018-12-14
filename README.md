@@ -21,6 +21,7 @@ This repository stores all Projects and interesting Quizzes solved during the Go
   - [07-jasmine-test-suite](#07-jasmine-test-suite)
   - [08-restaurant-app-v1](#08-restaurant-app-v1)
   - [09-react-myreads](#09-react-myreads)
+  - [10-react-mytapastour](#10-react-mytapastour)
 
 2. Quizzes
 
@@ -61,4 +62,8 @@ Diving deeper into **JavaScript and CSS animations.** *Task:* Build a complete b
 
 ## 09-react-myreads
 
-**React basics** Task: Convert a static web page into an Application controlled by React JS. 
+**React.js basics** Task: Convert a static web page into an Application controlled by React JS.
+
+## 10-react-mytapastour
+
+**React.js** Task: build a progressive web app from scratch with React JS.  

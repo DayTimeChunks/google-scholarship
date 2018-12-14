@@ -1,0 +1,38 @@
+{
+  "name": "mytapas-v1",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^4.1.3",
+    "escape-string-regexp": "^1.0.5",
+    "google-map-react": "^1.1.1",
+    "google-maps-react": "^2.0.2",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.6",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.3",
+    "react-bootstrap": "^0.32.4",
+    "react-dom": "^16.6.3",
+    "react-google-maps": "^9.4.5",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.1",
+    "sort-by": "^1.2.0",
+    "throttle-debounce": "^2.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "proxy": "http://localhost:3001"
+}
