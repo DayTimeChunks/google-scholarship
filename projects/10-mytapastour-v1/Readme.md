@@ -38,7 +38,11 @@ This option could be implemented with a second filter combination.
 
 ## Running this app
 
-There are two options to run this app: 
+You will need a Foursquare API key to run this app. 
+You can get your own key by signing up [here](https://developer.foursquare.com/), then go to: 
+`/src/utils/keys.js` and enter your client id and own secret key.
+
+After getting your API key, there are two options to run this app: 
 
 ### ...without service worker (on development mode)
 
