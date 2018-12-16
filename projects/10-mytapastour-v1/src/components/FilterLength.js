@@ -14,7 +14,6 @@ class FilterLength extends Component{
 
     let buttons;
     let expr = this.props.tapas.length;
-    console.log("loading buttons")
     switch (true) {
       case (expr < 11):
         buttons = (
@@ -24,7 +23,6 @@ class FilterLength extends Component{
         );
         break;
       case (expr < 21):
-        console.log("less than 21");
         buttons = (
             <div className="dropdown-menu">
               <FilterButton items={10} onNumberUpdate={onNumberUpdate}/>

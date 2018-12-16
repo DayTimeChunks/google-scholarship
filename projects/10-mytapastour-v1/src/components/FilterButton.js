@@ -9,7 +9,7 @@ class FilterButton extends Component {
   };
   chooseNumber = (nr, evt) => {
     evt.preventDefault();
-    console.log(evt);
+    // console.log(evt);
     this.props.onNumberUpdate(nr);
   };
 

@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom'
+import escapeRegExp from "escape-string-regexp";
 import './App.css';
 import SearchField from './components/SearchField'
 import TapasList from './components/TapasList'
 import * as FoursquareAPI from './utils/FoursquareAPI'
-
 import MapPromise from "./components/MapPromise";
-import escapeRegExp from "escape-string-regexp";
-import FilterNumber from "./components_unused/FilterNumber";
 import FilterLength from "./components/FilterLength";
 
 class App extends Component {
@@ -47,7 +45,9 @@ class App extends Component {
         .then( myJson => {
           this.setState({tapas: myJson.response.groups[0].items},
             () => {this.addPhotos()});
-        }).catch( err => { console.log(err)} )
+        }).catch( err => {
+          alert(err.message)
+      } )
     } else {
       // Broad search
       FoursquareAPI.getSearch(this.state.location)
@@ -56,7 +56,9 @@ class App extends Component {
             tapas: myJson.response.venues,
             tapasShown: this.shortenResults(myJson.response.venues, this.state.showLength)
           });
-        }).catch( err => { console.log(err)} )
+        }).catch( (err) => {
+          alert(err.message)
+      });
     }
   }
 
@@ -207,7 +209,7 @@ class App extends Component {
               />
             </div>
 
-            <div className="map-container col-12 col-md-6">
+            <div className="map-container col-12 col-md-6" role="application" aria-label="Filtered venue locations">
               <MapPromise
                 key={this.state.mapKey}
                 recommend={this.state.recommend}

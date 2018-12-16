@@ -35,10 +35,12 @@ export const getBest = (loc) => {
   myHeaders.append("Accept-Language", "en");
 
   return fetch(`${api}client_id=${id}&client_secret=${secret}&v=${apiUpToDate}&limit=${limitResponses}&intent=browse&ll=${loc.lat},${loc.lng}&categoryId=${food}`, myInit)
-    .then((res) => res.json())
-    .catch( (err) => {
-      console.log("getBest error, ", err)
-    });
+    .then((res) => {
+      if (res.ok){
+        return res.json();
+      }
+      throw new Error(`Network response was not OK on getBest() request. Status: ${res.status}`);
+    })
 };
 
 export const getSearch = (loc) => {
@@ -64,21 +66,21 @@ export const getSearch = (loc) => {
   myHeaders.append("Accept-Language", "en");
 
   return fetch(`${api}client_id=${id}&client_secret=${secret}&v=${apiUpToDate}&limit=${limitResponses}&intent=browse&ll=${loc.lat},${loc.lng}&radius=2000&categoryId=${food}`, myInit)
-    .then((res) => res.json())
-    .catch( (err) => {
-      console.log("getSearch error, ", err)
-    });
+    .then((res) => {
+      if (res.ok){
+        return res.json();
+      }
+      throw new Error(`Network response was not OK on getSearch() request. Status: ${res.status}`);
+    })
 };
 
 
 // Additional query, based on 1st result query,
 // which obtained a set of venue IDs
 export const getPhotos = (idArr) => {
-  // console.log("idArr ", idArr);
   // Construct an array of "fetch" requests
   let fetchArray = idArr.map( idPhoto =>
     (fetch(`${apiUrl}${apiFeature}/${idPhoto}/photos?client_id=${id}&client_secret=${secret}&v=${apiUpToDate}`)));
-  // console.log("fetchArray: ", fetchArray);
 
   // Fetch all, and wait for all to resolve,
   // then return an array of responses converted to json()
@@ -106,10 +108,12 @@ export const getQuery = (query, loc) => {
   myHeaders.append("Accept-Language", "en");
 
   return fetch(api, myInit)
-    .then((res) => res.json())
-    .catch((err) => {
-      console.log("Error on getQuery: ", err)
-    });
+    .then((res) => {
+      if (res.ok){
+        return res.json();
+      }
+      throw new Error(`Network response was not OK on getQuery() request. Status: ${res.status}`);
+    })
 };
 
 // Not used, only for exploring the API.

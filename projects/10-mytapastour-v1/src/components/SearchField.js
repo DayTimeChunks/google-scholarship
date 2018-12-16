@@ -40,12 +40,16 @@ class SearchField extends Component {
         .then(jsonRes => {
           this.props.update(jsonRes.response.venues, this.state.query);
           }
-        )
+        ).catch( (err) => {
+        alert(err.message)
+      });
     } else {
       FoursquareAPI.getSearch(this.props.location)
         .then(jsonRes => {
           this.props.update(jsonRes.response.venues, this.state.query)
-        })
+        }).catch( (err) => {
+          alert(err.message)
+      });
     }
 
   };
