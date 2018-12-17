@@ -8,7 +8,8 @@ class TapasList extends Component {
   static propTypes = {
     recommend: PropTypes.bool.isRequired,
     tapas: PropTypes.array.isRequired,
-    onCheckedId: PropTypes.func
+    onCheckedId: PropTypes.func,
+    apiState: PropTypes.bool
   };
 
   getVenuePhoto = (tapa) => {
@@ -41,22 +42,9 @@ class TapasList extends Component {
   }
 
   componentDidUpdate(){
-    // console.log("did update")
-    // //
-    // if (this.props.tapas && this.props.tapas.length > 0){
-    //   console.log(this.props.tapas);
-    //   this.props.tapas.map(tapa => {
-    //     let element = document.getElementById(tapa.id);
-    //     if (element){
-    //       element.addEventListener("keyup", (evt => {
-    //         // evt.preventDefault();
-    //         if (evt.keyCode === 13){
-    //           element.click();
-    //         }
-    //       }))
-    //     }
-    //   })
-    // }
+    if (this.props.apiState){
+      throw new Error("Foursquare API failed to load.")
+    }
   }
 
   isRecommended = (tapas) => {

@@ -3,16 +3,10 @@ import PropTypes from "prop-types";
 
 import { mapAPIkey } from '../utils/keys'
 
-
 // Global "markers" variable is not ideal, but alternative
 // would be to re-mount the Google Maps Api after every new search
 // by changing the component's key value.
 let markers;
-
-// Sources:
-// https://stackoverflow.com/questions/48493960/using-google-map-in-react-component  (best)
-// https://stackoverflow.com/questions/45429484/how-to-implement-google-maps-js-api-in-react-without-an-external-library
-// https://jsbin.com/tejutihoka/edit?js,output
 
 class MapPromise extends Component {
 
@@ -27,17 +21,19 @@ class MapPromise extends Component {
     super(props);
     this.state = {
       mapIsReady: false,
+      mapFailed: false,
       map: "",
       // markers: "", // Cannot setState in componentDidUpdate()
       infoWindow: "",
       center: {lat: 50.121870, lng: 8.689550}
+
     };
   }
 
   getGoogleMaps() {
     // If we haven't already defined the promise, define it
     if (!this.googleMapsPromise) {
-      this.googleMapsPromise = new Promise((resolve, reject) => {
+      this.googleMapsPromise = new Promise((resolve) => {
         // Add a global handler for when the API finishes loading
         window.resolveGoogleMapsPromise = () => {
           // Resolve the promise
@@ -48,38 +44,22 @@ class MapPromise extends Component {
           delete window.resolveGoogleMapsPromise;
         };
 
+        // Will catch map-API authentication errors.
+        window.gm_authFailure = () => {
+          this.setState({mapFailed: true})
+        };
+
         // Load the Google Maps API
         const script = document.createElement("script");
         script.src = `https://maps.googleapis.com/maps/api/js?key=${mapAPIkey}&callback=resolveGoogleMapsPromise`;
         script.async = true;
         script.defer = true;
-        script.onerror = (error) => reject(error);
         document.body.appendChild(script);
       });
     }
     // Return a promise for the Google Maps API
     return this.googleMapsPromise; // the "google" object
   }
-
-  // Ignore. Method for testing alternative approaches (for next version)
-  fetchGoogleMaps = () => {
-    fetch(`https://maps.googleapis.com/maps/api/js?key=${mapAPIkey}`, {})
-      .then( response => { // this would be the "google" object
-        if (response.ok){
-          return response;
-        }
-        throw new Error(`My promise error, response: ${response}`);
-      })
-  }
-
-  // checkGoogleError = () => {
-  //   document.addEventListener("DOMContentLoaded", () => {
-  //
-  //   });
-  //   // if (this.state.mapIsReady){
-  //   //   alert("Oops. Check Your Google Maps API Key.")
-  //   // }
-  // }
 
   // Method used on each marker upon creation or if list item is checked
   populateInfoWindow = (marker, infoWindow, map) => {
@@ -150,6 +130,8 @@ class MapPromise extends Component {
 
         return marker;
       });
+    } else {
+      throw new Error("Google Maps API did not respond!")
     }
 
   }
@@ -165,7 +147,8 @@ class MapPromise extends Component {
     // NOTE: Moved content to componentDidUpdate() because props was still empty at this point.
     this.getGoogleMaps()
       .then((google) => {
-        const map = new google.maps.Map(document.getElementById('map'), {
+        let mapElement = document.getElementById('map');
+        const map = new google.maps.Map(mapElement, {
           zoom: 13,
           center: this.state.center,
           mapTypeControl: false
@@ -177,32 +160,13 @@ class MapPromise extends Component {
       })
       .then(obj => {
         this.setState({
-          mapIsRead: true,
+          mapIsReady: true,
           map: obj.map,
           infoWindow: obj.window
         })
-      })
-      .catch(reason => {
-        alert(`Error with Google Maps API. Reason: ${reason}`);
-        //\nAttaching a static map instead...`
-        // let div = document.getElementById("map");
-        // let img = document.createElement("img");
-        // const height = (div.clientHeight ? div.clientHeight : "600");
-        // const width = (div.clientWidth ? div.clientWidth: "800");
-        //
-        // const center = this.state.center;
-        // const url = `https://maps.googleapis.com/maps/api/staticmap?`;
-        // const c = `center=${center.lat},${center.lng}&zoom=13&size=${height}x${width}&maptype=roadmap`;
-        // const marker1 = `&markers=color:blue%7Clabel:S%7C40.702147,-74.015794`;
-        // const marker2 = `&markers=color:green%7Clabel:G%7C40.711614,-74.012318;`
-        // const marker3 = `&markers=color:red%7Clabel:C%7C40.718217,-73.998284`
-        // const key = `&key=${API}`;
-        //
-        // img.src = url + c + key;
-        // if (div) {
-        //   document.getElementById("map").appendChild(img);
-        // }
-      })
+      }).catch(err => {
+        console.log("caught in catch", err)
+    })
   }
 
 
@@ -211,7 +175,33 @@ class MapPromise extends Component {
     const {checkedId} = this.props;
     const {map, infoWindow} = this.state;
 
+    if (this.state.mapFailed){
+      throw new Error(`Google API authentication problem. \nMaybe your API key is outdated?`)
+    }
+
     // this.checkGoogleError();
+
+    // window.onerror = function (msg, url, lineNo, columnNo, error) {
+    //   var string = msg.toLowerCase();
+    //   var substring = "script error";
+    //   if (string.indexOf(substring) > -1){
+    //     alert('Script Error: See Browser Console for Detail');
+    //   } else {
+    //     var message = [
+    //       'Message: ' + msg,
+    //       'URL: ' + url,
+    //       'Line: ' + lineNo,
+    //       'Column: ' + columnNo,
+    //       'Error object: ' + JSON.stringify(error)
+    //     ].join(' - ');
+    //
+    //     alert(message);
+    //   }
+    //
+    //   return false;
+    // };
+
+
 
     // Closes info window when list item gets clicked (on un-check)
     if (infoWindow.marker){
@@ -234,23 +224,7 @@ class MapPromise extends Component {
         }
       }
     }
-
   }
-
-  // componentDidUpdate(){
-  //   if (this.state.mapIsReady) {
-  //     // Display the map
-  //     this.map = new window.google.maps.Map(document.getElementById('map'), {
-  //       center: {lat: 50.121870, lng: 8.689550},
-  //       zoom: 13,
-  //       mapTypeId: 'roadmap',
-  //       mapTypeControl: false
-  //     });
-  //
-  //     let infoWindow = new window.google.maps.InfoWindow();
-  //
-  //   }
-  // }
 
   render() {
     return (

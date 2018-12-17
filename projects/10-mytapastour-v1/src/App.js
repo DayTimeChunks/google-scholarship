@@ -7,6 +7,7 @@ import TapasList from './components/TapasList'
 import * as FoursquareAPI from './utils/FoursquareAPI'
 import MapPromise from "./components/MapPromise";
 import FilterLength from "./components/FilterLength";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 class App extends Component {
 
@@ -23,7 +24,8 @@ class App extends Component {
       },
       checkedId: "",
       recommend: false, // false: Reduce number of API requests
-      mapKey: 0
+      mapKey: 0,
+      foursquareFailed: false
     }
   }
 
@@ -46,7 +48,9 @@ class App extends Component {
           this.setState({tapas: myJson.response.groups[0].items},
             () => {this.addPhotos()});
         }).catch( err => {
-          alert(err.message)
+          alert(err.message);
+          this.setState({foursquareFailed: true})
+
       } )
     } else {
       // Broad search
@@ -57,7 +61,8 @@ class App extends Component {
             tapasShown: this.shortenResults(myJson.response.venues, this.state.showLength)
           });
         }).catch( (err) => {
-          alert(err.message)
+          alert(err.message);
+          this.setState({foursquareFailed: true});
       });
     }
   }
@@ -202,28 +207,31 @@ class App extends Component {
                 onNumberUpdate={this.updateTapasShown}
               />
 
-              <TapasList
-                recommend={this.state.recommend}
-                tapas={this.state.tapasShown}
-                onCheckedId={this.handleCheck}
-              />
+              <ErrorBoundary>
+                <TapasList
+                  apiState={this.state.foursquareFailed}
+                  recommend={this.state.recommend}
+                  tapas={this.state.tapasShown}
+                  onCheckedId={this.handleCheck}
+                />
+              </ErrorBoundary>
             </div>
 
             <div className="map-container col-12 col-md-6" role="application" aria-label="Filtered venue locations">
-              <MapPromise
-                key={this.state.mapKey}
-                recommend={this.state.recommend}
-                tapas={this.state.tapasShown}
-                checkedId={this.state.checkedId}
-                handleInfoClose={this.infoClosed}
-              />
+              <ErrorBoundary>
+                <MapPromise
+                  key={this.state.mapKey}
+                  recommend={this.state.recommend}
+                  tapas={this.state.tapasShown}
+                  checkedId={this.state.checkedId}
+                  handleInfoClose={this.infoClosed}
+                />
+              </ErrorBoundary>
+
             </div>
           </div>
         )}
         />
-        {/*<Route path="/favourites" render={({history}) => (*/}
-          {/*<Favourites/>*/}
-        {/*)}/>*/}
 
       </div>
     );
@@ -231,21 +239,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-/*
-* <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-* */

@@ -73,3 +73,13 @@ To run this app:
 5. Delete caches on your localhost port by going to: *Developer tools > Applications > Cache* . Then delete the relevant cache.
      
 Note to self: to build the project I ran `npm run build`
+
+
+
+### Other attributions
+
+- Thanks to [Sean Groff](https://medium.com/@sgroff04/2-minutes-to-learn-react-16s-componentdidcatch-lifecycle-method-d1a69a1f753) for an example on `componentDidCatch()` to handle errors.
+
+- Using a promise to fetch [Google Maps API](https://stackoverflow.com/questions/48493960/using-google-map-in-react-component) 
+- Multiple checks on Maps [API](https://stackoverflow.com/questions/45429484/how-to-implement-google-maps-js-api-in-react-without-an-external-library) 
+- Same as the second, [but with React](https://jsbin.com/tejutihoka/edit?js,output)
